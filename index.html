@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание №5 - Bootstrap</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header p-3 mb-3">
+        <div class="container d-flex align-items-center gap-3">
+            <img src="image.jpg" alt="Логотип сайта" class="header-logo">
+            <h1 class="h3 m-0">Работа №5</h1>
+        </div>
+    </header>
+
+    <nav class="main-nav container mb-3">
+        <ul class="nav flex-column flex-md-row bg-white border rounded p-2 gap-2">
+            <li class="nav-item">
+                <a class="nav-link active" href="#links-section">Ссылки</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#table-section">Таблица</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#form-section">Форма</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content container mb-4">
+        <div class="row g-3">
+            <section class="content-section col-12 col-md-6 order-2 order-md-1" id="links-section">
+                <div class="p-3 bg-light border rounded h-100">
+                    <h2>Маркированный список ссылок</h2>
+                    <ul class="mb-0 ps-3">
+                        <!-- 1) абсолютную гиперссылку на главную страницу сайта kubsu.ru; -->
+                        <li><a href="http://kubsu.ru">Абсолютная ссылка на КубГУ (HTTP)</a></li>
+                        
+                        <!-- 2) абсолютную на главную сайта kubsu.ru в протоколе https; -->
+                        <li><a href="https://kubsu.ru">Абсолютная ссылка на КубГУ (HTTPS)</a></li>
+                        
+                        <!-- 3) ссылку-изображение; -->
+                        <li>
+                            <a href="https://kubsu.ru">
+                                <img src="image.jpg" alt="Цветок" width="200">
+                            </a>
+                        </li>
+                
+                        <!-- 4) сокращенную ссылку на внутреннюю страницу; -->
+                        <li><a href="/catalog/page.html">Сокращённая ссылка на внутреннюю страницу</a></li>
+                
+                        <!-- 5) сокращенную ссылку на главную страницу; -->
+                        <li><a href="/">Сокращённая ссылка на главную страницу</a></li>
+                
+                        <!-- 6) ссылку на фрагмент текущей страницы; -->
+                        <li><a href="#target-section">Ссылка на фрагмент текущей страницы (к якорю)</a></li>
+                
+                        <!-- 7) ссылку с тремя параметрами в URL; -->
+                        <li><a href="https://example.com/search?param1=val&param2=val&param3=val3">Ссылка с тремя параметрами</a></li>
+                
+                        <!-- 8) ссылку с параметром id в URL; -->
+                        <li><a href="https://example.com/user?id=12345">Ссылка с параметром id</a></li>
+                
+                        <!-- 9) относительную на страницу в текущем каталоге; -->
+                        <li><a href="local_page.html">Относительная в текущем каталоге</a></li>
+                
+                        <!-- 10) относительную на страницу в каталоге about; -->
+                        <li><a href="about/page.html">Относительная в каталоге about</a></li>
+                
+                        <!-- 11) относительную на страницу в каталоге уровнем выше текущего; -->
+                        <li><a href="../upper_page.html">Относительная в каталоге уровнем выше текущего</a></li>
+                
+                        <!-- 12) относительную на страницу в каталоге двумя уровнями выше; -->
+                        <li><a href="../../two_levels_up.html">Относительная двумя уровняме выше</a></li>
+                
+                        <!-- 13) контекстную в тексте абзаца; -->
+                        <li>
+                            <p>в этом абзаце расположена <a href="https://kubsu.ru">контекстная гиперссылка</a> внутри текста.</p>
+                        </li>
+                
+                        <!-- 14) ссылку на фрагмент страницы стороннего сайта; -->
+                        <li><a href="https://ru.wikipedia.org/wiki/HTML#История">Ссылка на фрагмент стороннего сайта</a></li>
+                
+                        <!-- 15) ссылки из прямоугольных и круглых областей картинки (HTML-тег map); -->
+                        <li>
+                            <p>Картинка с интерактивыми областями:</p>
+                            <img src="image.jpg" usemap="#flowermap" alt="Цветок с картой" width="400">
+                            <map name="flowermap">
+                                <area shape="rect" coords="0,0,100,100" href="https://example.com/rectangle" alt="Прямоугольная область">
+                                <area shape="circle" coords="200,150,50" href="https://example.com/circle" alt="Круглая область">
+                            </map>
+                        </li>
+                
+                        <!-- 16) ссылку с пустым href; -->
+                        <li><a href="">Ссылка с пустым href</a></li>
+                
+                        <!-- 17) ссылку без href; -->
+                        <li><a>Ссылка без атрибута</a></li>
+                
+                        <!-- 18) ссылку, по которой запрещен переход поисковикам; -->
+                        <li><a href="https://example.com" rel="nofollow">Переход поисковикам запрещён</a></li>
+                
+                        <!-- 19) запрещенную для индексации поисковиками; -->
+                        <li><a href="htpps://example.com" rel="noindex">Запрещённая для индексации ссылка</a></li>
+                
+                        <!-- 20) нумерованный список ссылок с подписями title; -->
+                        <li>
+                            <p>Нумерованный список с всплывающими подсказками:</p>
+                            <ol>
+                                <li><a href="https://example.com/1" title="Подсказка 1">Первая ссылка</a></li>
+                                <li><a href="https://example.com/2" title="Подсказка 2">Вторая ссылка</a></li>
+                                <li><a href="https://example.com/3" title="Подсказка 3">Третья ссылка</a></li>
+                            </ol>
+                        </li>
+                
+                        <!-- 21) ссылку на файл на сервере FTP с авторизацией; -->
+                        <li><a href="ftp://ftp.example.com/file.txt">Ссылка на файл на FTP-сервере</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section col-12 col-md-6 order-1 order-md-2" id="table-section">
+                <div class="p-3 bg-light border rounded h-100">
+                    <h2>Таблица данных</h2>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped m-0">
+                            <thead>
+                                <tr>
+                                    <th>Заголовок 1</th>
+                                    <th>Заголовок 2</th>
+                                    <th>Заголовок 3</th>
+                                    <th>Заголовок 4</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Текст 1.1</td>
+                                    <td>Текст 1.2</td>
+                                    <td rowspan="2">Объединенный текст (2 строки)</td>
+                                    <td>Текст 1.4</td>
+                                </tr>
+                                <tr>
+                                    <td>Текст 2.1</td>
+                                    <td>Текст 2.2</td>
+                                    <td>Текст 2.4</td>
+                                </tr>
+                                <tr>
+                                    <td>Текст 3.1</td>
+                                    <td colspan="2">Объединенный текст (2 колонки)</td>
+                                    <td>Текст 3.4</td>
+                                </tr>
+                                <tr>
+                                    <td>Текст 4.1</td>
+                                    <td>Текст 4.2</td>
+                                    <td>Текст 4.3</td>
+                                    <td>Текст 4.4</td>
+                                </tr>
+                                <tr>
+                                    <td>Текст 5.1</td>
+                                    <td>Текст 5.2</td>
+                                    <td>Текст 5.3</td>
+                                    <td>Текст 5.4</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section col-12 order-3" id="form-section">
+                <div class="p-3 bg-light border rounded">
+                    <h2 class="mb-3">Форма обратной связи</h2>
+                    <form action="#" method="post">
+                        <!-- 1 -->
+                        <label for="fio">ФИО:</label><br>
+                        <input type="text" id="fio" name="fio" placeholder="Иванов Иван Иванович" required><br><br>
+                
+                        <!-- 2 -->
+                        <label for="phone">Телефон:</label><br>
+                        <input type="tel" id="phone" name="phone" placeholder="+7 (999) 000-00-00"><br><br>
+                
+                        <!-- 3 -->
+                        <label for="email">E-mail:</label><br>
+                        <input type="email" id="email" name="email" placeholder="example@gmail.com" required><br><br>
+                
+                        <!-- 4 -->
+                        <label for="dob">Дата рождения:</label><br>
+                        <input type="date" id="dob" name="dob"><br><br>
+                
+                        <!-- 5 -->
+                        <label>Пол:</label><br>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Мужской</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Женский</label><br><br>
+                
+                        <!-- 6 -->
+                        <label for="languages">Любимый язык программирования:</label><br>
+                        <select id="languages" name="languages[]" multiple size="6">
+                            <option value="pascal">Pascal</option>
+                            <option value="c">C</option>
+                            <option value="cpp">C++</option>
+                            <option value="js">JavaScript</option>
+                            <option value="php">PHP</option>
+                            <option value="python">Python</option>
+                            <option value="java">Java</option>
+                            <option value="haskel">Haskel</option>
+                            <option value="clojure">Clojure</option>
+                            <option value="prolog">Prolog</option>
+                            <option value="scala">Scala</option>
+                        </select><br><br>
+                
+                        <!-- 7 -->
+                        <label for="bio">Биография:</label><br>
+                        <textarea id="bio" name="bio" rows="5" cols="40"></textarea><br><br>
+                
+                        <!-- 8 -->
+                        <input type="checkbox" id="contract" name="contract" required>
+                        <label for="contract">С контрактом ознакомлен (а)</label><br><br>
+                
+                        <!-- 9 -->
+                        <input type="submit" value="Сохранить">
+                    </form>
+                </div>
+            </section>
+
+            <section class="content-section col-12 my-4" id="calc-section">
+                <div class="p-3 bg-light border rounded">
+                    <h2>Калькулятор стоимости заказа</h2>
+                    <div class="mb-3">
+                        <label for="product-select" class="form-label">Выберите товар:</label>
+                        <select id="product-select" class="form-select">
+                            <option value="500">Товар А — 500 руб.</option>
+                            <option value="1200">Товар Б — 1200 руб.</option>
+                            <option value="2500">Товар В — 2500 руб.</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="product-quantity" class="form-label">Количество:</label>
+                        <input type="text" class="form-control" id="product-quantity" value="1">
+                        <div id="error-message" class="text-danger mt-1" style="display: none;"></div>
+                    </div>
+                    <button type="button" id="calc-btn" class="btn btn-primary">Рассчитать</button>
+                    <div class="mt-3 fs-5">
+                        <strong>Итоговая стоимость: <span id="result">500</span> руб.</strong>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="site-footer bg-dark text-white text-center p-3">
+        <div class="container">
+            <p class="m-0">(c) Автор работы 2026</p>
+        </div>
+    </footer>
+
+    <script src="calculator.js" defer></script>
+</body>
+</html>
